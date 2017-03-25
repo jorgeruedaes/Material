@@ -8,9 +8,7 @@ include('../RutinaDeLogueo.php');
 if ($pruebadeinicio==1 or $pruebadeinicio==2) {
 
 $letras=$_SESSION['admin'];
-$numeros=mysql_query($conexion,"select * from tb_torneo where usuario='$letras'");
-$caracteres=mysqli_fetch_array($numeros);
-$name=$caracteres['id_torneo'];
+
 ?>
 
 
@@ -103,7 +101,7 @@ if (mysqli_num_rows($lugares) > 0)
 <label>Estado actual:</label> <input type="text" size="30" readonly="readonly" value="<?php echo $res['nombre']?>">
 <br>
 <?php
-$estados=mysqli_query($conexion,"SELECT * FROM tb_estados_partido where id_estado!='2'");
+$estados=mysqli_query($conexion,"SELECT * FROM tb_estados_partido ");
 
 if (mysqli_num_rows($estados) > 0)
   {

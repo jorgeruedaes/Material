@@ -52,7 +52,7 @@ $name=$caracteres['id_torneo'];
 <link rel="stylesheet" href="../../Formularios/formoid17_files/formoid1/formoid-flat-black.css" type="text/css" />
 <script type="text/javascript" src="../../Formularios/formoid17_files/formoid1/jquery.min.js"></script>
 <?php
-$partidos = mysqli_query($conexion,"SELECT * from tb_partidos WHERE Estado!='2'    and Estado!=6");
+$partidos = mysqli_query($conexion,"SELECT * from tb_partidos WHERE  Estado!=6 ORDER BY numero_fecha asc");
   while ($res_partidos=mysqli_fetch_array($partidos)) {
 
 $equipo1=$res_partidos['equipo1'];
