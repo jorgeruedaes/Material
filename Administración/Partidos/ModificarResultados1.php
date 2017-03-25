@@ -2,7 +2,7 @@
 
 <?php 
 session_start();
-include('../../conexion.php'); 
+include('../../Admin/php/conexion.php'); 
 include('../../funciones.php');  
 include('../Encabezado.html');
 include('../RutinaDeLogueo.php');

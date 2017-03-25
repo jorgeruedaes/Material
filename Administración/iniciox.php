@@ -1,17 +1,17 @@
 
-
 <?php
 session_start();
-include('../conexion.php');
+include('../Admin/php/conexion.php');
+$_SESSION['Id']="9999";
 if (isset($_SESSION['admin'])) {
-include('RutinaDeLogue.php');
+include('RutinaDeLogueo.php');
  if ($_SESSION['tipo_usuario'] == 1) {
             header("location:modulosuperadmin.php");
     } elseif ($_SESSION['tipo_usuario'] == 2) {
         
         header("location:modulousuariostutorneo.php");
     } elseif ($_SESSION['tipo_usuario'] == 3) {
-        header("location:../Usuarios/Planilleros/moduloplanilla.php");
+        header("location:modulousuariostutorneo.php");
         $pruebadeinicio = 3;
     } else {
         echo "Usted no está autorizado para ingresar";
@@ -40,14 +40,15 @@ include('RutinaDeLogue.php');
             <script type="text/javascript" src="../Formularios/formoid3_files/formoid1/formoid-solid-green.js"></script>
             <body>
             <br>
-            <form action="comprobar.php" class="formoid-solid-green" style="background-color:#FFFFFF;font-size:14px;font-family:serif;color:#34495E;max-width:480px;min-width:150px" method="post">
+            <form action="../Admin/php/peticiones.php" class="formoid-solid-green" style="background-color:#FFFFFF;font-size:14px;font-family:serif;color:#34495E;max-width:480px;min-width:150px" method="post">
 
             <div class="title"><h2>Módulo de Administración</h2></div>
             <div class="element-input"><label class="title"></label><div class="item-cont">
-                    <center><input class="medium" type="text" name="user" id="username" placeholder="Usuario" required/><span class="icon-place"></span></div></div></center>
+                    <center><input class="medium" type="text" name="username" id="username" placeholder="Usuario" required/><span class="icon-place"></span></div></div></center>
         <div class="element-password"><label class="title"></label><div class="item-cont">
-                <center><input class="medium" type="password" name="pass" id="password" value="" placeholder="Contraseña" required/><span class="icon-place"></span></div></div></center>
+                <center><input class="medium" type="password" name="password" id="password" value="" placeholder="Contraseña" required/><span class="icon-place"></span></div></div></center>
     <div style="text-align:center" class="submit"><input type="submit" style="width:120px;height:30px" value="Iniciar sesión"/></div>
+    <input type="hidden" name="bandera" value="conectar"/>
     </form>
 
     </body>

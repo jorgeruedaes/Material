@@ -2,8 +2,8 @@
 
 <?php
 session_start();
-include('../../conexion.php');
-include('../../funciones.php');
+include('../../Admin/php/conexion.php'); 
+include('../../Admin/php/funciones.php'); 
 include('../Encabezado.html');
 include('../RutinaDeLogueo.php');
 if ($pruebadeinicio==1 or $pruebadeinicio==2) {

@@ -2,7 +2,7 @@
 
 <?php
 session_start();
-include('../../conexion.php');
+include('../../Admin/php/conexion.php'); 
 include('../Encabezado.html');
 include('../RutinaDeLogueo.php');
 if ($pruebadeinicio==1 or $pruebadeinicio==2 or $pruebadeinicio==4) {

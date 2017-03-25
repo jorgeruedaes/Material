@@ -12,13 +12,13 @@
 </html>
 
 <?php 
-include('../conexion.php');
+include('../Admin/php/conexion.php');
     session_start();
  $contraseña= $_POST['pass'];
  $usuario = $_POST['user'];
 $contra_encriptada = md5($contraseña);
 $usuario_encriptado= md5($usuario);
-$primero=mysqli_query($conexion,"SELECT usuario,contrasena,torneo,tipo,estado,torneo FROM tb_usuarios ");
+$primero=mysqli_query($conexion,"SELECT usuario,contrasena,torneo,tipo,estado FROM tb_usuarios ");
 while ($var=mysqli_fetch_array($primero)) {
 if ($usuario_encriptado==$var['usuario']
   and $contra_encriptada==$var['contrasena']

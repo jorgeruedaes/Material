@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include('../../../conexion.php');
+include('../../../Admin/php/conexion.php'); 
 include('../../RutinaDeLogueo.php');
 if ($pruebadeinicio==1 or $pruebadeinicio==2) {
 

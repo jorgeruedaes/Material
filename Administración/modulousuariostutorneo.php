@@ -2,9 +2,9 @@
     <html xmlns="http://www.w3.org/1999/xhtml">
 <?php
 session_start();
-include('../conexion.php');
+include('../Admin/php/conexion.php');
 include('RutinaDeLogueo.php');
-if ($pruebadeinicio==2) {
+if ($pruebadeinicio==2 or $pruebadeinicio==3) {
     ?>
         <head>
             <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
