@@ -48,13 +48,13 @@ ContadorVisitas($ipvisitante,'estadisticas');
 						<tbody>
 							<?php
 							$contador =1;
-							$vector = ObtenerTablaPosiciones('23');
+							$vector = ObtenerTablaPosiciones('24');
 							foreach ($vector as $datos)
 							{
 
 								?>
 								<tr>
-									<td  class="posicion" id="<?php echo $contador; ?>">  <?php echo $contador; ?> </td>
+									<td>  <?php echo $contador; ?> </td>
 									<td>  <?php echo $datos['equipo']; ?> </td>
 									<td>  <?php echo $datos['puntos']; ?> </td>
 									<td>  <?php echo $datos['pj']; ?> </td>

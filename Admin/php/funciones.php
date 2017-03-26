@@ -86,6 +86,7 @@ function DatosPartido($identificador)
 function ObtenerJugadoresEquipo($identificador)
 {
     global $conexion;
+    Get_Tabla_Posiciones();
     $jugadores = mysqli_query($conexion, "SELECT *FROM tb_jugadores WHERE equipo=$identificador ORDER BY fecha_nacimiento desc");
     $vector    = array();
     while ($valor = mysqli_fetch_array($jugadores)) {
@@ -267,10 +268,9 @@ function ObtenerGoleadoresEquipo($equipo)
 // Retorna : Tabla de posiciones en  un array
 function ObtenerTablaPosiciones($limite)
 {
-   Get_Tabla_Posiciones();
    global $conexion;
-
    $valor = mysqli_query($conexion, "SELECT * FROM te_posiciones order by  puntos desc, pg desc,dg desc,gf desc limit $limite");
+ 
    $datos = array();
    while ($informacion = mysqli_fetch_array($valor)) {
     $equipo = $informacion['equipo'];
@@ -896,7 +896,7 @@ function Get_Tabla_Posiciones()
 // se calcula el numero de equipos que han jugado hasta ahora con una nueva variable que define el numero de columnas creadas (numero de equipos que ha jugado)
     $numerodeequiposparaeltamañodelamatriz = mysqli_num_rows($equiposquehanjugado);
 
-    $matriz[$numerodeequiposparaeltamañodelamatriz]['20'] = 0;
+    $matriz[$numerodeequiposparaeltamañodelamatriz]['13'] = 0;
     $i = 0;
     while ($identificaciones = mysqli_fetch_array($equiposquehanjugado)) {
     $matriz[$i]['3'] = 0;  // GOLES A FAVOR
@@ -1008,11 +1008,11 @@ for ($i = 0; $i < $numerodeequiposparaeltamañodelamatriz; $i++) {
 
                             // FIN SITUACIONES ESPECIALES
 
-                            mysqli_query($conexion,"INSERT INTO `te_posiciones`(`equipo`, `puntos`, `pj`, `pg`, `pe`, `pp`, `gf`, `gc`, `dg`,`id`,`grupo`)
-                              VALUES ('$variable1','$variable2','$variable3','$variable4','$variable5','$variable6','$variable7','$variable8','$variable9','$variable11','$variable10');")
+                            mysqli_query($conexion,"INSERT INTO `te_posiciones`(`equipo`, `puntos`, `pj`, `pg`, `pe`, `pp`, `gf`, `gc`, `dg`,`grupo`,`id`)
+                              VALUES ('$variable1','$variable2','$variable3','$variable4','$variable5','$variable6','$variable7','$variable8','$variable9','$variable10','$variable11');")
                             or die(mysql_error());
 
                         }
                     }
-
-                    ?>
+                    
+                ?>
