@@ -88,9 +88,9 @@ else if($bandera === "conectar") {
 			 $_SESSION['admin']=$values['id_usuarios']; // quitar
 			$_SESSION['perfil']=$values['perfil'];
 			$_SESSION['tipo_usuario']=$values['perfil']; // quitar
-	header("location:../../Administración/modulousuariostutorneo.php"); //quitar
+	//header("location:../../Administración/modulousuariostutorneo.php"); //quitar
 			$_SESSION['Id']=Int_New_Sesion($values['id_usuarios']);
-			//header("location:../pages/administracion.php");
+		header("location:../pages/administracion.php");
 		}else{
 			header("location:../pages/error.php");
 		}
