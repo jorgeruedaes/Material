@@ -12,6 +12,7 @@ if(Boolean_Get_Modulo_Permiso($id_modulos,$_SESSION['perfil'])){
 
 	<!-- JQuery DataTable Css -->
 	<link href="plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+	<link href="pages/partidos/css/partido.css" rel="stylesheet">
 	<section class="content">
 		<div class="container-fluid">
 			<div class="block-header">
@@ -45,8 +46,14 @@ if(Boolean_Get_Modulo_Permiso($id_modulos,$_SESSION['perfil'])){
 					<div class="card">
 						<div class="header">
 							<h2>
+							<div class="col-sm-3">
+									<div class="form-group">
+										<div class="form-line">
+											<input type="text" class="form-control goles" placeholder="Goles">
+										</div>
+									</div>
+								</div>
 								<?php echo Get_NombreEquipo($partido['equipo1']);  ?>
-								<small>.</small>
 							</h2>
 						</div>
 						<div class="body">
@@ -55,7 +62,7 @@ if(Boolean_Get_Modulo_Permiso($id_modulos,$_SESSION['perfil'])){
 									<tr>
 										<th>Jugador</th>
 										<th>Tarjeta</th>
-										<th>  Gol</th>
+										<th>Gol</th>
 										<th>Autogol</th>
 									</tr>
 								</thead>
@@ -107,8 +114,15 @@ if(Boolean_Get_Modulo_Permiso($id_modulos,$_SESSION['perfil'])){
 					<div class="card">
 						<div class="header">
 							<h2>
+							<div class="col-sm-3">
+									<div class="form-group">
+										<div class="form-line">
+											<input type="text" class="form-control goles" placeholder="Goles">
+										</div>
+									</div>
+								</div>
 								<?php echo Get_NombreEquipo($partido['equipo2']);  ?>
-								<small>.</small>
+								
 							</h2>
 						</div>
 						<div class="body">
@@ -127,7 +141,7 @@ if(Boolean_Get_Modulo_Permiso($id_modulos,$_SESSION['perfil'])){
 									$i=1;
 									foreach ($vector as $value) {
 										?>
-									<tr>
+										<tr>
 											<td><?php echo String_Get_NombreCompleto($value['id_jugador']) ?></td>
 											<td>
 												<select class="form-control show-tick select-equipoa">
