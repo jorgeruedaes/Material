@@ -121,7 +121,7 @@ ContadorVisitas($ipvisitante,'principal');
 										<th style="width:5%">PG</th>
 
 									</tr>
-								</thead>
+								</thead>  
 
 								<tbody>
 									<?php
